@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<dev id="app">
+    <dev @click="divBtnClick">
+<!--        当点击按钮的时候,div也被点击了,形成了一个事件冒泡,当用stop修饰按钮click的时候,就阻止了冒泡-->
+        <h2>div其他内容</h2>
+        <button @click.stop="btnClick">按钮</button>
+    </dev>
+
+</dev>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊'
+        },
+        methods: {
+            btnClick() {
+                console.log("button被点击了")
+            },
+            divBtnClick() {
+                console.log("div被点击了")
+            }
+        }
+    })
+</script>
+</body>
+</html>

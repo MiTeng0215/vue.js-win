@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<dev id="app">
+<!--    在btnclick后面添加括号,可以往里面添加参数,当没有括号的时候,会自动传入一个event事件对象.当既想传入参数有想要传入事件对象的话,可以加上$event传入事件对象-->
+    <button @click="btnClick(1,$event)">按钮</button>
+</dev>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好啊'
+        },
+        methods: {
+            btnClick(i,event) {
+                console.log(i+"button被点击了"+event)
+            }
+        }
+    })
+</script>
+</body>
+</html>

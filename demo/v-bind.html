@@ -9,7 +9,8 @@
     <ul>
         <li v-for="m in movies">{{m}}</li>
     </ul>
-    <h2>{{message}}</h2>
+    <h2 v-bind:class="{active:isActive, line:isLine}">{{message}}</h2>
+    <h2 :style="{fontSize:'50px'}">{{message}}</h2>
     <img :src="image">
 </div>
 <script src="../js/vue.js"></script>
@@ -19,10 +20,17 @@
         data: {
             message: '你好啊',
             movies: ['海王','钢铁侠','星际穿越'],
+            isActive: true,
+            isLine: false,
             image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599155836461&di=867255afe5c0d5d1efc76b5226c2cf34&imgtype=0&src=http%3A%2F%2Fa2.att.hudong.com%2F36%2F48%2F19300001357258133412489354717.jpg'
         }
     })
 </script>
+<style>
+    .active {
+        color: red;
+    }
+</style>
 
 </body>
 </html>
